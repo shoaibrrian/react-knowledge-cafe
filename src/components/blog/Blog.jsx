@@ -12,22 +12,22 @@ const Blog = ({ blog, handleAddToBookmark }) => {
                     <img className="w-16" src={author_img} alt="" />
                     <div className="ml-6">
                         <h3 className="text-2xl font-bold">{author}</h3>
-                        <p>{posted_date}</p>
+                        <p className="text-[rgba(17,17,17,0.6)]">{posted_date}</p>
                     </div>
                 </div>
                 <div className="flex items-center">
-                    <span className="text-lg mx-2">{reading_time} mins read</span>
+                    <span className="text-lg mx-2 text-[rgba(17,17,17,0.6)]">{reading_time} mins read</span>
                     <button
-                        onClick={handleAddToBookmark}
-                        className="text-2xl cursor-pointer"
+                        onClick={() => handleAddToBookmark(blog)}
+                        className="text-2xl cursor-pointer text-[rgba(17,17,17,0.6)]"
                     ><IoBookmarkOutline />
                     </button>
 
 
                 </div>
             </div>
-            <h2 className="text-4xl font-bold">{title}</h2>
-            <p>
+            <h2 className="text-4xl font-bold my-4">{title}</h2>
+            <p className="text-[rgba(17,17,17,0.6)] text-xl">
                 {
                     hashtags.map((hash, idx) => <span key={idx}> <a href="">{hash}</a> </span>)
                 }
