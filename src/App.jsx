@@ -1,12 +1,15 @@
  import { useState } from 'react'
 import './App.css'
+import Header from './components/header/Header'
+import Blogs from './components/blogs/Blogs'
 
 function App() {
   
 
   return (
     <>
-      <h1 className='text-6xl bg-red-200'>Knowledge Cafe</h1>
+      <Header></Header>
+      <Blogs></Blogs>
     </>
   )
 }
