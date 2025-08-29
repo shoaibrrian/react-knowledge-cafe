@@ -3,7 +3,7 @@ import Bookmarks from "../bookmarks/Bookmarks";
 
 
 const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
-    const { title, cover_pic, author, author_img, posted_date, reading_time, hashtags } = blog;
+    const {id, title, cover_pic, author, author_img, posted_date, reading_time, hashtags } = blog;
     return (
         <div className="mb-20">
             <img className="w-full mb-8" src={cover_pic} alt={`Cover picture of the title ${title}`} />
@@ -31,7 +31,7 @@ const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
                 }
             </p>
             <button className="text-purple-600 mt-5 underline cursor-pointer" onClick={
-                () => handleMarkAsRead(reading_time)}>Mark as read</button>
+                () => handleMarkAsRead(id,reading_time)}>Mark as read</button>
         </div>
     );
 };
