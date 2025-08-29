@@ -2,7 +2,7 @@ import { IoBookmarkOutline } from "react-icons/io5";
 import Bookmarks from "../bookmarks/Bookmarks";
 
 
-const Blog = ({ blog, handleAddToBookmark }) => {
+const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
     const { title, cover_pic, author, author_img, posted_date, reading_time, hashtags } = blog;
     return (
         <div className="mb-20">
@@ -22,8 +22,6 @@ const Blog = ({ blog, handleAddToBookmark }) => {
                         className="text-2xl cursor-pointer text-[rgba(17,17,17,0.6)]"
                     ><IoBookmarkOutline />
                     </button>
-
-
                 </div>
             </div>
             <h2 className="text-4xl font-bold my-4">{title}</h2>
@@ -32,6 +30,8 @@ const Blog = ({ blog, handleAddToBookmark }) => {
                     hashtags.map((hash, idx) => <span key={idx}> <a href="">{hash}</a> </span>)
                 }
             </p>
+            <button className="text-purple-600 mt-5 underline cursor-pointer" onClick={
+                () => handleMarkAsRead(reading_time)}>Mark as read</button>
         </div>
     );
 };
